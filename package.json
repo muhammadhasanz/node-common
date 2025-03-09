@@ -1,5 +1,5 @@
 {
-  "name": "@twi-x-keith-project/twi-common",
+  "name": "@keith-project/node-common",
   "version": "1.0.2",
   "license": "MIT",
   "description": "",
@@ -9,7 +9,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twi-x-keith-project/twi-common.git"
+    "url": "https://github.com/muhammadhasanz/node-common.git"
   },
   "scripts": {
     "build": "tsc && tsc-alias",
