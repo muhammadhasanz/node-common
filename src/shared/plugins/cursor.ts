@@ -268,15 +268,4 @@ export function mongooseCursorPaginate<T>(schema: Schema<T>) {
       return undefined;
     }
   };
-
-  // Pengaturan toJSON dan toObject agar _id tampil sebagai id dan __v dihilangkan
-  const toJSONOptions = {
-    virtuals: true,
-    transform: function (doc: any, ret: any) {
-      ret.id = ret._id;
-      delete ret.__v;
-    }
-  };
-  schema.set('toJSON', toJSONOptions);
-  schema.set('toObject', toJSONOptions);
 }
