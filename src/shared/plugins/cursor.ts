@@ -268,4 +268,16 @@ export function mongooseCursorPaginate<T>(schema: Schema<T>) {
       return undefined;
     }
   };
+
+  const options = {
+    virtuals: true,
+    transform: function (doc: any, ret: any) {
+      delete ret._id;
+      delete ret.__v;
+      return ret;
+    }
+  };
+
+  schema.set('toJSON', options);
+  schema.set('toObject', options);
 }

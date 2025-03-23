@@ -19,8 +19,12 @@ export abstract class Controller {
     }
   }
 
-  public created(res: Response) {
-    return res.sendStatus(201);
+  public created<T>(res: Response, dto?: T) {
+    if (!!dto) {
+      return sendSuccessResponse(res, dto, 201);
+    } else {
+      return res.sendStatus(201);
+    }
   }
 
   public fail(res: Response, error: Error | string) {
